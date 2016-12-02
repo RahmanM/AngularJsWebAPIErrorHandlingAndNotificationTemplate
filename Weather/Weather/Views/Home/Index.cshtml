@@ -1,0 +1,113 @@
+﻿
+
+<div ng-controller="CountriesController as countryCtrl">
+
+    <div class="container">
+        
+        <div class="">
+            <h1>Weather Information</h1>
+
+            <p class="lead alert-info">Note: Currenly Only Australia and Canada is supported.</p>
+        </div>
+
+        <form role="form" class="form-horizontal">
+
+            <div ng-controller="CitiesController as cityCtrl">
+                
+                <!-- Selection Panel -->
+                <fieldset class="margin-bottom-fieldset">
+                    <legend class="margin-bottom-underline"></legend>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label for="countryName">Country Name:</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" id="countryName"
+                                   required placeholder="Please enter e.g. Australia or Canada"
+                                   class="form-control" ng-change="countryCtrl.populateCities()"
+                                   ng-model="countryCtrl.country"
+                                   ng-model-options="{ updateOn: 'default blur', debounce: {'default': 800, 'blur': 0} }"/>
+
+                            <loading-info-indicator text-to-show="Loading cities..." show-indicator="countryCtrl.showLoading"></loading-info-indicator>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label for="cities">Cities:</label>
+                        </div>
+                        <div class="col-md-9">
+                            <select id="cities" class="form-control" ng-model="countryCtrl.city.Id"
+                                    ng-disabled="!countryCtrl.country || countryCtrl.cities.length === 0"
+                                    ng-options="city.Id as city.Name for city in countryCtrl.cities"
+                                    ng-change="cityCtrl.getCityInfo(countryCtrl.city.Id)"></select>
+
+                            <loading-info-indicator text-to-show="Loading city info..." show-indicator="cityCtrl.showLoading"></loading-info-indicator>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <!-- Weather Info Result -->
+                <div class="city-info animated bounceInLeft" ng-show="cityCtrl.showInfo===true" ng-cloak>
+
+                    <fieldset class="margin-bottom-fieldset">
+
+                        <legend class="margin-bottom-underline">Weather Information for the city of <i class="alert-success">{{cityCtrl.city.Name}}</i>:</legend>
+
+                        <table class="table table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>Name</th>
+                                    <td>{{cityCtrl.city.Name}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Location</th>
+                                    <td>{{cityCtrl.city.Location}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Time</th>
+                                    <td>{{cityCtrl.city.Time}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Wind</th>
+                                    <td>{{cityCtrl.city.Wind}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Visibility</th>
+                                    <td>{{cityCtrl.city.Visibility}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Sky Conditions</th>
+                                    <td>{{cityCtrl.city.SkyConditions}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Temperature</th>
+                                    <td>{{cityCtrl.city.Temperature}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Dew Point</th>
+                                    <td>{{cityCtrl.city.DewPoint}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Relative Humidity</th>
+                                    <td>{{cityCtrl.city.RelativeHumidity}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Pressure</th>
+                                    <td>{{cityCtrl.city.Pressure}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </fieldset>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

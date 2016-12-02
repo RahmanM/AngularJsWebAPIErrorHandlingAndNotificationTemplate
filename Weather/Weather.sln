@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather", "Weather\Weather.csproj", "{0BD16885-FAA2-4FB0-8BEF-7F4477130FD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Data", "Weather.Data\Weather.Data.csproj", "{81E63BA3-5784-4683-8684-6510003B2F06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Tests", "Weather.Tests\Weather.Tests.csproj", "{2716D363-2324-4D0E-8339-16117AB4B1CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{EEB9D6E8-85AE-4D01-BF5E-610EDB621C5C}"
+	ProjectSection(SolutionItems) = preProject
+		Weather\.nuget\NuGet.Config = Weather\.nuget\NuGet.Config
+		Weather\.nuget\NuGet.exe = Weather\.nuget\NuGet.exe
+		Weather\.nuget\NuGet.targets = Weather\.nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://rahmanmahmoodi.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Weather\\Weather.csproj
+		SccProjectName1 = Weather
+		SccLocalPath1 = Weather
+		SccProjectUniqueName2 = Weather.Data\\Weather.Data.csproj
+		SccProjectName2 = Weather.Data
+		SccLocalPath2 = Weather.Data
+		SccProjectUniqueName3 = Weather.Tests\\Weather.Tests.csproj
+		SccProjectName3 = Weather.Tests
+		SccLocalPath3 = Weather.Tests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BD16885-FAA2-4FB0-8BEF-7F4477130FD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD16885-FAA2-4FB0-8BEF-7F4477130FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BD16885-FAA2-4FB0-8BEF-7F4477130FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BD16885-FAA2-4FB0-8BEF-7F4477130FD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E63BA3-5784-4683-8684-6510003B2F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E63BA3-5784-4683-8684-6510003B2F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E63BA3-5784-4683-8684-6510003B2F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E63BA3-5784-4683-8684-6510003B2F06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2716D363-2324-4D0E-8339-16117AB4B1CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2716D363-2324-4D0E-8339-16117AB4B1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2716D363-2324-4D0E-8339-16117AB4B1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2716D363-2324-4D0E-8339-16117AB4B1CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
