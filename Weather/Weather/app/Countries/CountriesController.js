@@ -17,21 +17,20 @@ weatherApp.controller("CountriesController", ['CitiesService', 'NotificationServ
     ctrl.populateCities = function () {
 
         if (ctrl.country) {
-
             ctrl.showLoading = true;
 
-                var promise = citiesService.getCities(ctrl.country);
-                promise.then(function (response) {
-                    ctrl.cities = response.data;
-                    ctrl.showLoading = false;
-                    if (ctrl.cities.length === 0 && ctrl.country !== undefined) {
-                        notificationService.info("No cities are found for the selected country.");
-                    }
-                }, function (error) {
-                    ctrl.showLoading = false;
-                    console.log(error); // Use a bettr logging strategy for production!
-                    notificationService.error(error.data.ExceptionMessage);
-                });
+            var promise = citiesService.getCities(ctrl.country);
+            promise.then(function (response) {
+                ctrl.cities = response.data;
+                ctrl.showLoading = false;
+                if (ctrl.cities.length === 0 && ctrl.country !== undefined) {
+                    notificationService.info("No cities are found for the selected country.");
+                }
+            }, function (error) {
+                ctrl.showLoading = false;
+                console.log(error); // Use a better logging strategy for production!
+                notificationService.processError(error);
+            });
 
         }
         else {

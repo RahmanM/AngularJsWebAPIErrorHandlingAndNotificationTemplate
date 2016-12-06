@@ -27,7 +27,6 @@ namespace Weather.Tests.Api.Tests
 
             var result = controller.GetCitiesByCountryName("SomeCountry");
             Assert.IsNotNull(result);
-            Assert.IsTrue(result.Any());
 
         }
 

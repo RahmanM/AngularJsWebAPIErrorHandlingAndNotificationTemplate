@@ -26,8 +26,8 @@ weatherApp.controller("CitiesController", ['CitiesService', 'NotificationService
                 ctrl.showInfo = true;
             }, function (error) {
                 ctrl.showLoading = false;
-                console.log(error); // Use a bettr logging strategy for production1!
-                notificationService.error(error.data.ExceptionMessage);
+                console.log(error); // Use a better logging strategy for production1!
+                notificationService.processError(error);
             });
         }
         else {

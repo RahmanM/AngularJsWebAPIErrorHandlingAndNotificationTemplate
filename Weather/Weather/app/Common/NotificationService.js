@@ -18,4 +18,18 @@ weatherApp.service('NotificationService', function () {
         toastr.info(text);
     }
 
+    self.processError = function(errorObject) {
+
+        // This will handle the exceptions that are thrown from api
+        if (errorObject.data.ExceptionMessage) {
+            toastr.error(errorObject.data.ExceptionMessage, "Error");
+        }
+
+        // this will handle the errors like NotFound or InternalServerError
+        if (errorObject.data.Message) {
+            toastr.error(errorObject.data.Message, "Error");
+        }
+
+    }
+
 });

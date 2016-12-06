@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Weather.Data;
@@ -26,12 +28,12 @@ namespace Weather.Api
         /// </summary>
         /// <param name="countryName">Country name</param>
         [Route("api/Cities/GetCitiesByCountryName/{countryName:alpha}")]
-        public IQueryable<City> GetCitiesByCountryName(string countryName)
+        public IHttpActionResult GetCitiesByCountryName(string countryName)
         {
             var cities =
                 CitiesRepository.GetCitiesByCountryName(countryName);
 
-            return cities;
+            return Ok(cities);
         }
 
         /// <summary>
